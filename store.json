@@ -418,50 +418,59 @@
   },
   {
    "slug": "its-cold",
-   "name": "warm beanie",
+   "name": "its head beanie",
    "challenge": "It's cold. Warm it up.",
    "game": "games/its-cold.js",
-   "price": 5600,
+   "price": 3800,
    "images": [
     {
      "src": "img/its-cold/1.jpg",
-     "alt": "warm beanie, Custom"
+     "alt": "its head beanie, Black"
     },
     {
      "src": "img/its-cold/2.jpg",
-     "alt": "warm beanie, Custom"
+     "alt": "its head beanie, Spruce"
     },
     {
      "src": "img/its-cold/3.jpg",
-     "alt": "warm beanie, Custom"
+     "alt": "its head beanie, Black"
     },
     {
      "src": "img/its-cold/4.jpg",
-     "alt": "warm beanie, Custom"
-    },
-    {
-     "src": "img/its-cold/5.jpg",
-     "alt": "warm beanie, Custom"
-    },
-    {
-     "src": "img/its-cold/6.jpg",
-     "alt": "warm beanie, Custom"
+     "alt": "its head beanie, Black"
     }
    ],
    "variants": [
     {
-     "id": 5558998105,
-     "label": "",
-     "options": {}
+     "id": 5559192110,
+     "label": "Spruce",
+     "options": {
+      "colour": "Spruce"
+     }
+    },
+    {
+     "id": 5559192116,
+     "label": "Black",
+     "options": {
+      "colour": "Black"
+     }
     }
    ],
-   "description": "A knitted beanie with a row of little taktekbots going round.",
+   "description": "A green cuffed beanie with two white eyes stitched on the cuff. Put it on and you are taktekbot.",
    "details": [
-    "Custom knitted jacquard beanie",
-    "Knitted, not printed",
+    "Yupoong cuffed knit beanie",
+    "Embroidered eyes",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Spruce",
+      "Black"
+     ]
+    }
+   ]
   },
   {
    "slug": "put-it-to-sleep",
@@ -550,38 +559,39 @@
   },
   {
    "slug": "give-things-eyes",
-   "name": "stick-on eyes",
+   "name": "the eyes",
    "challenge": "Give three things eyes.",
    "game": "games/give-things-eyes.js",
-   "price": 1200,
+   "price": 1400,
    "images": [
     {
      "src": "img/give-things-eyes/1.jpg",
-     "alt": "stick-on eyes, Satin"
+     "alt": "the eyes, White"
     },
     {
      "src": "img/give-things-eyes/2.jpg",
-     "alt": "stick-on eyes, Satin"
+     "alt": "the eyes, White"
     },
     {
      "src": "img/give-things-eyes/3.jpg",
-     "alt": "stick-on eyes, Satin"
+     "alt": "the eyes, White"
     },
     {
      "src": "img/give-things-eyes/4.jpg",
-     "alt": "stick-on eyes, Satin"
+     "alt": "the eyes, White"
     }
    ],
    "variants": [
     {
-     "id": 5558988813,
+     "id": 5559192269,
      "label": "",
      "options": {}
     }
    ],
-   "description": "A sheet of twelve pairs of eyes. Stick them on the kettle, the fridge, your colleague's monitor.",
+   "description": "A card of twelve fat matte-black eyes, kiss-cut so each peels off on its own. Give the kettle a face.",
    "details": [
-    "Kiss-cut vinyl, 3″×4″ sheet",
+    "Kiss-cut sticker sheet, A5",
+    "Printed backing card",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
    "options": []
@@ -634,38 +644,42 @@
   },
   {
    "slug": "hide-and-seek",
-   "name": "the patch",
+   "name": "certified curious patch",
    "challenge": "It's hiding on this page. Find it four times.",
    "game": "games/hide-and-seek.js",
    "price": 1600,
    "images": [
     {
      "src": "img/hide-and-seek/1.jpg",
-     "alt": "the patch, White"
+     "alt": "certified curious patch, White"
     },
     {
      "src": "img/hide-and-seek/2.jpg",
-     "alt": "the patch, White"
+     "alt": "certified curious patch, White"
     },
     {
      "src": "img/hide-and-seek/3.jpg",
-     "alt": "the patch, White"
+     "alt": "certified curious patch, White"
     },
     {
      "src": "img/hide-and-seek/4.jpg",
-     "alt": "the patch, White"
+     "alt": "certified curious patch, White"
+    },
+    {
+     "src": "img/hide-and-seek/5.jpg",
+     "alt": "certified curious patch, White"
     }
    ],
    "variants": [
     {
-     "id": 5559094474,
+     "id": 5559192306,
      "label": "",
      "options": {}
     }
    ],
-   "description": "An embroidered patch for a bag, a jacket, a laptop sleeve.",
+   "description": "A round merit badge for the curious: fully embroidered, iron-on or sew-on.",
    "details": [
-    "Embroidered patch, 3.5″×2.25″",
+    "Embroidered patch, 3″ circle",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
    "options": []
@@ -938,74 +952,74 @@
   },
   {
    "slug": "knit-the-row",
-   "name": "the cardigan",
+   "name": "eyes in the dark cardigan",
    "challenge": "Knit the row.",
    "game": "games/knit-the-row.js",
    "price": 12800,
    "images": [
     {
      "src": "img/knit-the-row/1.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     },
     {
      "src": "img/knit-the-row/2.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     },
     {
      "src": "img/knit-the-row/3.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     },
     {
      "src": "img/knit-the-row/4.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     },
     {
      "src": "img/knit-the-row/5.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     },
     {
      "src": "img/knit-the-row/6.jpg",
-     "alt": "the cardigan, Custom"
+     "alt": "eyes in the dark cardigan, Custom"
     }
    ],
    "variants": [
     {
-     "id": 5558992807,
+     "id": 5559192435,
      "label": "S",
      "options": {
       "size": "S"
      }
     },
     {
-     "id": 5558992808,
+     "id": 5559192440,
      "label": "M",
      "options": {
       "size": "M"
      }
     },
     {
-     "id": 5558992809,
+     "id": 5559192449,
      "label": "L",
      "options": {
       "size": "L"
      }
     },
     {
-     "id": 5558992810,
+     "id": 5559192458,
      "label": "XL",
      "options": {
       "size": "XL"
      }
     },
     {
-     "id": 5558992811,
+     "id": 5559192467,
      "label": "2XL",
      "options": {
       "size": "2XL"
      }
     }
    ],
-   "description": "A knitted cardigan covered in tiny taktekbots, in bone and grass green.",
+   "description": "A black knitted cardigan with little bone-coloured eyes peeking out all over. One pair has fallen asleep.",
    "details": [
     "Custom knitted jacquard cardigan",
     "Knitted, not printed",
