@@ -1,7 +1,7 @@
 // B03 the eyes tee — "Win a staring contest."
 // Close-up: the bot fills the stage, a tiny clock ticks in the corner, a sweat drop forms
 // as the seconds run out, its eye trembles — then it blinks first, in dramatic slow motion.
-import { createBot, heading, shade } from './_bot.js';
+import { createBot, heading, shade, winBeat } from './_bot.js';
 
 export default function mount(kit) {
   const o = kit.options || {};
@@ -97,10 +97,6 @@ export default function mount(kit) {
     bot.look(0, 0);
     bot.tilt(0);
     bot.blink(kit, { duration: 420, dramatic: true });
-    kit.after(260, () => {
-      const big = kit.el('p', { class: 'g-big', style: { position: 'absolute', left: '0', right: '0', bottom: '10%', textAlign: 'center', margin: '0' }, text: 'it blinked first.' });
-      kit.stage.append(big);
-    });
-    kit.after(1100, () => kit.win('it blinked first.'));
+    kit.after(260, () => winBeat(kit, svg, 'it blinked first.'));
   }
 }

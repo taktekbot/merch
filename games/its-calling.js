@@ -1,6 +1,8 @@
-// B13 — MagSafe case, face by the camera. Unlock: "taktekbot is calling." Answer, keep
-// the line open 30 seconds while it says small things, then "can i come with you?"
-import { createBot } from './_bot.js';
+// B13 — MagSafe case, face by the camera. Unlock: "taktekbot is calling." A real phone held
+// in a hand: lock screen, caller photo, slide to answer. During the call the bot is "on
+// video", small talk in bubbles, for 30 seconds.
+import { createBot, shadow, heading, shade, tint } from './_bot.js';
+import { winBeat } from './_bot2.js';
 
 const CALL_MS = 30000;
 const LINES = [
@@ -13,68 +15,134 @@ const LINES = [
 
 export default function mount(kit) {
   const card = (kit.colors && kit.colors.card) || '#EFECE6';
+  const ink = '#0D0D0E';
+  const svg = kit.svg('svg', { viewBox: '0 0 1000 1000' });
+  kit.stage.append(svg);
+  svg.append(kit.svg('rect', { x: 0, y: 0, width: 1000, height: 1000, fill: '#E8DFCF' }));
 
-  const wrap = kit.el('div', { class: 'g-center', style: { flexDirection: 'column', gap: '8px' } });
-  kit.stage.append(wrap);
+  // a hand holding the phone from below: two fingers wrapping the sides, a thumb in front
+  const skin = '#D9A27E';
+  const handBack = kit.svg('g', {}, [
+    kit.svg('path', { d: 'M 236 760 Q 200 900 260 1010 L 340 1010 Q 300 880 320 790 Z', fill: skin }),
+    kit.svg('path', { d: 'M 764 760 Q 800 900 740 1010 L 660 1010 Q 700 880 680 790 Z', fill: skin }),
+  ]);
+  svg.append(handBack);
+
+  shadow(kit, { cx: 500, cy: 1000, rx: 300, ry: 30, opacity: 0.12, parent: svg });
+
+  // the phone itself
+  const body = kit.svg('rect', { x: 280, y: 70, width: 440, height: 860, rx: 54, fill: ink });
+  const screen = kit.svg('rect', { x: 300, y: 94, width: 400, height: 812, rx: 36, fill: '#1B2230' });
+  const notch = kit.svg('rect', { x: 440, y: 108, width: 120, height: 26, rx: 13, fill: ink });
+  svg.append(body, screen, notch);
+
+  // thumb overlapping the front, drawn after the screen so it reads as holding it
+  const thumb = kit.svg('path', { d: 'M 250 880 Q 220 940 270 990 Q 330 1020 390 980 L 360 880 Q 320 850 250 880 Z', fill: tint(skin, 0.05) });
+  svg.append(thumb);
+
+  const screenG = kit.svg('g', {});
+  svg.append(screenG);
+
+  const head = heading(kit, { parent: kit.stage, line: "it's calling.", hint: 'slide to answer.', color: '#F7F5F1', hintColor: '#8FA6B8' });
+  let hintHidden = false;
+  const hideHint = () => { if (!hintHidden) { hintHidden = true; head.hide(); } };
 
   kit.on(window, 'keydown', (e) => {
     if (e.code !== 'Enter' && e.code !== 'Space') return;
-    const answer = wrap.querySelector('#answer');
-    if (answer) { e.preventDefault(); answer.click(); }
+    e.preventDefault();
+    if (!answered) answerCall();
   });
 
+  let answered = false;
   showIncoming();
 
-  function botSvg(px) {
-    const svg = kit.svg('svg', { viewBox: '0 0 1000 1000', style: { width: `${px}px`, height: `${px}px` } });
-    const bot = createBot(kit, { cx: 500, cy: 500, r: 420, bg: card });
-    svg.append(bot.group);
-    return { svg, bot };
+  function botFace(r, mood) {
+    const g = kit.svg('g', {});
+    const bot = createBot(kit, { cx: 0, cy: 0, r });
+    g.append(bot.group);
+    if (mood) mood(bot);
+    return { g, bot };
   }
 
   function showIncoming() {
-    wrap.replaceChildren();
-    const { svg } = botSvg(100);
-    wrap.append(
-      svg,
-      kit.el('p', { class: 'g-mono', text: 'taktekbot' }),
-      kit.el('p', { class: 'g-big', text: 'is calling…' }),
-    );
-    const row = kit.el('div', { style: { display: 'flex', gap: '14px' } });
-    const decline = kit.el('button', { class: 'g-btn', text: 'Decline', id: 'decline' });
-    const answer = kit.el('button', { class: 'g-btn solid', text: 'Answer', id: 'answer' });
-    decline.onclick = () => kit.status("it'll try again later.");
-    answer.onclick = startCall;
-    row.append(decline, answer);
-    wrap.append(row);
+    screenG.replaceChildren();
+    const wall = kit.svg('rect', { x: 300, y: 94, width: 400, height: 812, rx: 36, fill: '#1B2230' });
+    const time = kit.svg('text', { x: 500, y: 200, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-size': 32, fill: '#8FA6B8', opacity: 0.8, text: '2:14' });
+    const avatarWrap = kit.svg('g', { transform: 'translate(500 420)' });
+    const ring = kit.svg('circle', { cx: 0, cy: 0, r: 92, fill: '#2F4F46' });
+    const { g: faceG } = botFace(78);
+    avatarWrap.append(ring, faceG);
+    const name = kit.svg('text', { x: 500, y: 548, 'text-anchor': 'middle', 'font-family': 'var(--display)', 'font-weight': 700, 'font-size': 34, fill: '#F7F5F1', text: 'taktekbot' });
+    const label = kit.svg('text', { x: 500, y: 580, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-size': 18, fill: '#8FA6B8', text: 'mobile' });
+    const incoming = kit.svg('text', { x: 500, y: 650, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-size': 16, fill: '#8FA6B8', opacity: 0.8, text: 'incoming call…' });
+    screenG.append(wall, time, avatarWrap, name, label, incoming);
+
+    // slide-to-answer track
+    const trackY = 840, trackX0 = 330, trackX1 = 660, r = 34;
+    const track = kit.svg('rect', { x: trackX0 - r, y: trackY - r, width: (trackX1 - trackX0) + r * 2, height: r * 2, rx: r, fill: '#2F4F46' });
+    const chevrons = [0, 1, 2].map((i) => kit.svg('text', {
+      x: trackX0 + 60 + i * 26, y: trackY + 7, 'font-family': 'var(--display)', 'font-weight': 700,
+      'font-size': 22, fill: '#8FA6B8', opacity: 0.5, text: '›',
+    }));
+    const trackLabel = kit.svg('text', { x: (trackX0 + trackX1) / 2 + 28, y: trackY + 7, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-size': 15, fill: '#8FA6B8', text: 'slide to answer' });
+    const thumbG = kit.svg('circle', { cx: trackX0, cy: trackY, r: r - 4, fill: '#00A862', style: { cursor: 'grab' } });
+    screenG.append(track, ...chevrons, trackLabel, thumbG);
+
+    let chT = 0;
+    const chStop = kit.loop((dt) => {
+      chT += dt;
+      chevrons.forEach((c, i) => c.setAttribute('opacity', 0.25 + 0.55 * ((Math.sin(chT / 220 - i * 0.7) + 1) / 2)));
+    });
+
+    let dragging = false, tx = trackX0;
+    const setX = (x) => { tx = Math.max(trackX0, Math.min(trackX1, x)); thumbG.setAttribute('cx', tx); trackLabel.setAttribute('opacity', Math.max(0, 1 - (tx - trackX0) / (trackX1 - trackX0) * 1.6)); };
+    kit.on(thumbG, 'pointerdown', (e) => { dragging = true; hideHint(); e.preventDefault(); });
+    kit.on(window, 'pointermove', (e) => {
+      if (!dragging) return;
+      const p = kit.point(e);
+      setX(300 + p.x * 400);
+    });
+    kit.on(window, 'pointerup', () => {
+      if (!dragging) return;
+      dragging = false;
+      if (tx > trackX1 - 14) { chStop(); answerCall(); } else { setX(trackX0); }
+    });
+    kit.on(screenG, 'pointerdown', (e) => { if (e.target === thumbG) return; hideHint(); });
   }
 
-  function startCall() {
+  function answerCall() {
+    if (answered) return;
+    answered = true;
+    hideHint();
     const started = performance.now();
-    wrap.replaceChildren();
-    const { svg, bot } = botSvg(120);
-    const timer = kit.el('p', { class: 'g-mono', text: '0:00' });
-    const caption = kit.el('p', { class: 'g-big', text: '…' });
-    const hang = kit.el('button', { class: 'g-btn', text: 'Hang up', id: 'hangup' });
-    hang.onclick = showIncoming;
-    wrap.append(svg, timer, caption, hang);
+    screenG.replaceChildren();
+    const wall = kit.svg('rect', { x: 300, y: 94, width: 400, height: 812, rx: 36, fill: '#0D0D0E' });
+    const { g: faceG, bot } = botFace(170);
+    faceG.setAttribute('transform', 'translate(500 420)');
+    const timer = kit.svg('text', { x: 500, y: 150, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-size': 24, fill: '#F7F5F1', text: '0:00' });
+    const caption = kit.svg('text', { x: 500, y: 660, 'text-anchor': 'middle', 'font-family': 'var(--display)', 'font-weight': 600, 'font-size': 26, fill: '#F7F5F1', text: '…' });
+    const bubbleBg = kit.svg('rect', { x: 330, y: 620, width: 340, height: 70, rx: 20, fill: '#1B2230' });
+    const hangRing = kit.svg('circle', { cx: 500, cy: 820, r: 42, fill: '#C9764F' });
+    const hangIcon = kit.svg('rect', { x: 484, y: 804, width: 32, height: 32, rx: 8, fill: '#F7F5F1', transform: 'rotate(135 500 820)' });
+    screenG.append(wall, faceG, timer, bubbleBg, caption, hangRing, hangIcon);
+    bot.autoBlink(kit, { min: 1600, max: 2600 });
 
-    let said = 0, blinkAt = performance.now() + 1500, ended = false;
-    const stop = kit.loop(() => {
+    kit.on(hangRing, 'pointerdown', () => { ended = true; showIncoming(); answered = false; });
+
+    let said = 0, ended = false;
+    kit.loop(() => {
       if (ended) return false;
       const elapsed = performance.now() - started;
       const secs = Math.floor(elapsed / 1000);
       timer.textContent = `0:${String(Math.min(30, secs)).padStart(2, '0')}`;
       kit.status(`${Math.min(30, secs)}/30`);
-      if (performance.now() >= blinkAt) { bot.height(0.1); kit.after(140, () => bot.height(1)); blinkAt = performance.now() + 1800 + Math.random() * 1500; }
-      while (said < LINES.length && elapsed >= LINES[said][0]) { caption.textContent = LINES[said][1]; said++; }
+      while (said < LINES.length && elapsed >= LINES[said][0]) { caption.textContent = LINES[said][1]; said++; bot.squash(kit, { amount: 0.1, duration: 160 }); }
       if (elapsed >= CALL_MS) { ended = true; won(); return false; }
     });
-    kit.cleanup(() => { ended = true; });
   }
 
   function won() {
     kit.status('30/30');
-    kit.win('came along.');
+    winBeat(kit, svg, 'came along.', { message: 'came along.', delay: 1100 });
   }
 }

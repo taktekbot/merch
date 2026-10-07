@@ -482,18 +482,95 @@ export function phone(kit, { parent, x = 0, y = 0, w = 60, h = 108, lit = false 
   return { group: g, setLit(v) { glow.setAttribute('opacity', v ? 0.3 : 0); screen.setAttribute('fill', v ? '#F2D98A' : '#1B2230'); } };
 }
 
-// Framing per POLISH.md rule 5: a small lowercase heading (the green dot as full stop) and
-// a mono hint underneath that you remove once the player starts.
+// Converts a distance expressed in "units at the 1000 scale" (the same scale every SVG
+// in these games is drawn at) to real px, based on the stage's current rendered width —
+// so HTML overlay text (which can't use viewBox units directly) still scales exactly like
+// the SVG content around it.
+function unitPx(kit, units) {
+  const w = (kit.stage && kit.stage.clientWidth) || 1000;
+  return (w / 1000) * units;
+}
+
+// Framing per POLISH.md rules 5 + 8: a small lowercase heading — Space Grotesk 600 at ~34
+// units — with the green dot as its full stop, and a mono hint at ~22 units underneath
+// that you remove once the player starts. Both re-measure against the stage on resize.
 export function heading(kit, { parent, line, hint, accent, color, hintColor } = {}) {
   const wrap = kit.el('div', { style: { position: 'absolute', left: '0', right: '0', top: '5%', textAlign: 'center', pointerEvents: 'none' } });
-  const dot = kit.el('span', { style: { display: 'inline-block', width: '0.2em', height: '0.2em', borderRadius: '50%', background: accent || (kit.colors && kit.colors.accent) || '#00A862', marginLeft: '0.06em' } });
-  const text = line.endsWith('.') ? line.slice(0, -1) : line;
-  const h = kit.el('p', { class: 'g-mono', style: { margin: '0', fontSize: '15px', letterSpacing: '0.02em', color: color || 'var(--ink)', fontWeight: '600' }, text }, [dot]);
+  const dot = kit.el('span', { style: { display: 'inline-block', width: '0.22em', height: '0.22em', borderRadius: '50%', background: accent || (kit.colors && kit.colors.accent) || '#00A862', marginLeft: '0.08em' } });
+  const text = (line.endsWith('.') ? line.slice(0, -1) : line).toLowerCase();
+  const h = kit.el('p', {
+    style: {
+      margin: '0', fontFamily: 'var(--display)', fontWeight: '600', letterSpacing: '-0.01em',
+      color: color || 'var(--ink)', textTransform: 'lowercase',
+    }, text,
+  }, [dot]);
   wrap.append(h);
   let hintEl;
-  if (hint) { hintEl = kit.el('p', { class: 'g-mono', style: { margin: '6px 0 0', fontSize: '12px', color: hintColor || 'var(--muted)' }, text: hint }); wrap.append(hintEl); }
+  if (hint) {
+    hintEl = kit.el('p', { class: 'g-mono', style: { margin: '0.4em 0 0', color: hintColor || 'var(--muted)', transition: 'opacity .25s ease' }, text: hint });
+    wrap.append(hintEl);
+  }
   if (parent) parent.append(wrap);
+
+  function resize() {
+    h.style.fontSize = `${unitPx(kit, 34)}px`;
+    if (hintEl) hintEl.style.fontSize = `${unitPx(kit, 22)}px`;
+  }
+  resize();
+  try {
+    const ro = new ResizeObserver(resize);
+    ro.observe(kit.stage);
+    kit.cleanup(() => ro.disconnect());
+  } catch {}
+
   return { group: wrap, hide() { if (hintEl) hintEl.style.opacity = '0'; } };
 }
 
-export default { createBot, MOODS, shadow, room, sceneWindow, nightstand, lamp, bed, hideBehind, zParticles, sparks, frost, phone, heading, shade, tint, mix, animate, EASE };
+// POLISH.md rule 6, "the win beat": the line big and centred on a soft rounded paper panel
+// so it reads clearly over any scene, holds briefly, then calls kit.win(line). `svg` is the
+// game's own root <svg> — the panel is drawn and appended last, so it always sits above the
+// scenery. opts: delay (ms before it appears, to let an in-scene beat play first; default
+// 0), hold (ms shown before kit.win fires; default 1200), cy (vertical centre, 1000 scale;
+// default 500), message (what's passed to kit.win, defaults to the same line).
+export function winBeat(kit, svg, line, opts = {}) {
+  const { delay = 0, hold = 1200, cy = 500, message = line } = opts;
+  const paper = opts.paper || '#F7F5F1';
+  const inkColor = opts.ink || INK;
+  const dotColor = opts.accent || (kit.colors && kit.colors.accent) || '#00A862';
+  const text = (line.endsWith('.') ? line.slice(0, -1) : line).toLowerCase();
+
+  const fs = 56;
+  const estTextW = text.length * fs * 0.6;
+  const panelW = Math.min(860, Math.max(420, estTextW + fs * 2.6));
+  const panelH = fs * 2.5;
+
+  const g = kit.svg('g', { opacity: 0 });
+  shadow(kit, { cx: 500, cy: cy + panelH * 0.46, rx: panelW * 0.46, ry: panelH * 0.2, opacity: 0.14, parent: g });
+  const panel = kit.svg('rect', { x: 500 - panelW / 2, y: cy - panelH / 2, width: panelW, height: panelH, rx: panelH * 0.32, fill: paper, opacity: 0.92 });
+  const txt = kit.svg('text', {
+    x: 500, y: cy + fs * 0.33, 'text-anchor': 'middle',
+    'font-family': 'var(--display)', 'font-weight': 600, 'font-size': fs, fill: inkColor, text,
+  });
+  g.append(panel, txt);
+  svg.append(g);
+
+  kit.after(delay, () => {
+    let dotX = 500 + estTextW / 2 + fs * 0.2, dotY = cy + fs * 0.12;
+    try {
+      const bbox = txt.getBBox();
+      dotX = bbox.x + bbox.width + fs * 0.14;
+      dotY = bbox.y + bbox.height - fs * 0.14;
+    } catch {}
+    g.append(kit.svg('circle', { cx: dotX, cy: dotY, r: fs * 0.08, fill: dotColor }));
+    g.setAttribute('transform', 'translate(0 16)');
+    animate(kit, 260, EASE.outCubic, (p) => {
+      g.setAttribute('opacity', p);
+      g.setAttribute('transform', `translate(0 ${16 * (1 - p)})`);
+    });
+    kit.after(hold, () => kit.win(message));
+  });
+
+  return { group: g };
+}
+
+export default { createBot, MOODS, shadow, room, sceneWindow, nightstand, lamp, bed, hideBehind, zParticles, sparks, frost, phone, heading, winBeat, shade, tint, mix, animate, EASE };

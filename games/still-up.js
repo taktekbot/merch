@@ -2,7 +2,7 @@
 // A dark bedroom: the bot glows faintly on the bedside table next to a phone that keeps
 // lighting up. Only unlocks 1am–5am local time; a lamp you can switch on together sits
 // within reach the whole time, just for company.
-import { createBot, room, sceneWindow, nightstand, lamp, phone, heading } from './_bot.js';
+import { createBot, room, sceneWindow, nightstand, lamp, phone, heading, winBeat } from './_bot.js';
 
 const isWitchingHour = (date) => { const h = date.getHours(); return h >= 1 && h < 5; };
 const pad2 = (n) => String(n).padStart(2, '0');
@@ -81,9 +81,9 @@ export default function mount(kit) {
   function win_() {
     bot.bounce(kit, { height: 30 });
     if (controls) { controls.remove(); controls = null; }
-    big.textContent = 'so are you. good.';
+    big.textContent = '';
     kit.after(260, () => lampFixture.setOn(true));
-    kit.after(900, () => kit.win('so are you. good.'));
+    kit.after(600, () => winBeat(kit, svg, 'so are you. good.'));
   }
 
   draw();

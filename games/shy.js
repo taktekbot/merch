@@ -2,7 +2,7 @@
 // A cosy room: the bot is tucked behind the sofa arm. Hold still and it creeps out,
 // peeking and blushing; move and it ducks back. Reach full trust and it crosses the rug
 // to sit beside you.
-import { createBot, room, hideBehind, shadow, heading } from './_bot.js';
+import { createBot, room, hideBehind, shadow, heading, winBeat } from './_bot.js';
 
 export default function mount(kit) {
   const card = (kit.colors && kit.colors.card) || '#EFECE6';
@@ -93,11 +93,7 @@ export default function mount(kit) {
       bot.look(0, -6);
       bot.height(0.42);
       bot.curl(24);
-      kit.after(500, () => {
-        const big = kit.el('p', { class: 'g-big', style: { position: 'absolute', left: '14%', right: '4%', top: '72%', textAlign: 'center', margin: '0', fontSize: 'clamp(22px, 5.2vw, 40px)' }, text: 'it trusts you.' });
-        kit.stage.append(big);
-        kit.after(900, () => kit.win('ok. you can see it now.'));
-      });
+      kit.after(500, () => winBeat(kit, svg, 'it trusts you.'));
     });
   }
 }

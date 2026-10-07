@@ -2,7 +2,7 @@
 // A small bed, a night light, the room dimming. Its eyes get heavy over 20 calm seconds and
 // the blanket rises and falls with its breathing; a big move startles it awake and it has
 // to settle again. Small twitches are forgiven.
-import { createBot, room, bed, lamp, zParticles, heading } from './_bot.js';
+import { createBot, room, bed, lamp, zParticles, heading, winBeat } from './_bot.js';
 
 export default function mount(kit) {
   const o = kit.options || {};
@@ -84,10 +84,6 @@ export default function mount(kit) {
     wonAlready = true;
     bot.sleepy(1);
     breatheFront(0.3);
-    kit.after(700, () => {
-      const big = kit.el('p', { class: 'g-big', style: { position: 'absolute', left: '0', right: '0', bottom: '8%', textAlign: 'center', margin: '0', color: '#F7F5F1' }, text: 'asleep. shh.' });
-      kit.stage.append(big);
-    });
-    kit.after(1500, () => kit.win('asleep. shh.'));
+    kit.after(700, () => winBeat(kit, svg, 'asleep. shh.'));
   }
 }

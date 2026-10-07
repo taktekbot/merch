@@ -2,7 +2,7 @@
 // A snowy window, frost creeping on the glass, the bot shivering with a dusting of frost
 // on top. Rub it (scrub side to side) and friction sparks fly as the frost melts back;
 // warm all the way and it gets a scarf.
-import { createBot, room, sceneWindow, frost, sparks, shadow, heading, mix } from './_bot.js';
+import { createBot, room, sceneWindow, frost, sparks, shadow, heading, mix, winBeat } from './_bot.js';
 
 export default function mount(kit) {
   const card = (kit.colors && kit.colors.card) || '#EFECE6';
@@ -89,10 +89,6 @@ export default function mount(kit) {
     bot.height(1);
     bot.squash(kit, { amount: 0.2, duration: 240 });
     kit.after(200, () => bot.wearScarf({ color: '#C9764F' }));
-    kit.after(600, () => {
-      const big = kit.el('p', { class: 'g-big', style: { position: 'absolute', left: '0', right: '0', bottom: '8%', textAlign: 'center', margin: '0' }, text: 'warm now. thanks.' });
-      kit.stage.append(big);
-    });
-    kit.after(1300, () => kit.win('warm now. thanks.'));
+    kit.after(700, () => winBeat(kit, svg, 'warm now. thanks.'));
   }
 }
