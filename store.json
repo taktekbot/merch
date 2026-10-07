@@ -1,0 +1,211 @@
+{
+ "id": "taktekbot",
+ "name": "taktekbot merch",
+ "url": "https://taktekbot.com/merch/",
+ "currency": "USD",
+ "checkout": null,
+ "debug": true,
+ "brand": {
+  "paper": "#F7F5F1",
+  "ink": "#0D0D0E",
+  "accent": "#00A862",
+  "muted": "#6B6A66",
+  "fontDisplay": "\"Space Grotesk\", system-ui, sans-serif",
+  "fontMono": "\"JetBrains Mono\", ui-monospace, monospace",
+  "fontsHref": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+ },
+ "printfulStoreId": 18869094,
+ "headline": "It wants to come with you.",
+ "intro": "Twenty things with taktekbot on them. It's curious, not very independent, and it doesn't hand itself over easily. Win each one first.",
+ "homeLink": {
+  "href": "https://taktekbot.com/",
+  "label": "taktekbot.com"
+ },
+ "pieces": [
+  {
+   "slug": "shy",
+   "name": "shy dad hat",
+   "challenge": "It's shy. Earn its trust.",
+   "game": "games/shy.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "still-up",
+   "name": "still up hoodie",
+   "line": "still up.",
+   "challenge": "Open from 1 to 5 in the morning, your time.",
+   "game": "games/still-up.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "staring-contest",
+   "name": "the eyes tee",
+   "challenge": "Win a staring contest.",
+   "game": "games/staring-contest.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "its-cold",
+   "name": "warm beanie",
+   "challenge": "It's cold. Warm it up.",
+   "game": "games/its-cold.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "put-it-to-sleep",
+   "name": "sleeping pillow",
+   "challenge": "It never sleeps. Put it to sleep.",
+   "game": "games/put-it-to-sleep.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "hydrate",
+   "name": "bot bottle",
+   "challenge": "Hydrate the bot.",
+   "game": "games/hydrate.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "give-things-eyes",
+   "name": "stick-on eyes",
+   "challenge": "Give three things eyes.",
+   "game": "games/give-things-eyes.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "coffee",
+   "name": "it made you coffee mug",
+   "challenge": "It made you coffee. Stop it at the line.",
+   "game": "games/coffee.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "hide-and-seek",
+   "name": "the patch",
+   "challenge": "It's hiding on this page. Find it four times.",
+   "game": "games/hide-and-seek.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "lead-it-home",
+   "name": "bot pillow",
+   "challenge": "Lead it home without losing it.",
+   "game": "games/lead-it-home.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "gate-12",
+   "name": "luggage tag",
+   "line": "curious, not very independent.",
+   "challenge": "Collect it at gate 12 before the gate closes.",
+   "game": "games/gate-12.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "find-the-bot",
+   "name": "the desk mat",
+   "challenge": "One dot looks back. Find it.",
+   "game": "games/find-the-bot.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "its-calling",
+   "name": "the phone case",
+   "challenge": "It's calling. Answer.",
+   "game": "games/its-calling.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "it-climbs-in",
+   "name": "the tote",
+   "challenge": "Pack the bag. Make room for it.",
+   "game": "games/it-climbs-in.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "knit-the-row",
+   "name": "the cardigan",
+   "challenge": "Knit the row.",
+   "game": "games/knit-the-row.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "follow-the-sun",
+   "name": "the bucket hat",
+   "challenge": "Keep it in the shade until sunset.",
+   "game": "games/follow-the-sun.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "why",
+   "name": "curious crewneck",
+   "line": "curious.",
+   "challenge": "Answer every why.",
+   "game": "games/why.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "three-things",
+   "name": "the journal",
+   "line": "things i learned today.",
+   "challenge": "Teach it three things.",
+   "game": "games/three-things.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "never-slept",
+   "name": "the board book",
+   "line": "the bot who never slept.",
+   "challenge": "Read it to the end.",
+   "game": "games/never-slept.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  },
+  {
+   "slug": "moods",
+   "name": "the five moods buttons",
+   "challenge": "Match the mood, five times.",
+   "game": "games/moods.js",
+   "price": 0,
+   "images": [],
+   "variants": []
+  }
+ ]
+}
