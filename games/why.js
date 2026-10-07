@@ -20,7 +20,7 @@ export default function mount(kit) {
   kit.stage.append(svg);
 
   room(kit, { parent: svg, wall: '#E8DFCF', floor: shade(wood, 0.1), floorY: 760 });
-  sceneWindow(kit, { parent: svg, x: 686, y: 70, w: 200, h: 200, sky: 'day', curtains: false });
+  sceneWindow(kit, { parent: svg, x: 790, y: 190, w: 150, h: 150, sky: 'day', curtains: false });
 
   // a wooden high chair behind the bot: two posts + a crossbar, raised on short legs
   const chairX = 500, postW = 26, postGap = 260;

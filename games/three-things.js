@@ -44,7 +44,6 @@ export default function mount(kit) {
     kit.svg('path', { d: 'M 86 -5 L 104 0 L 86 5 Z', fill: '#0D0D0E' }),
     kit.svg('rect', { x: 0, y: -5, width: 14, height: 10, fill: '#F2A6A6' }),
   ]);
-  svg.append(pencil);
 
   // the open journal: two paper pages with a spine, laid on the desk at a gentle angle
   const journal = kit.svg('g', { transform: 'translate(500 600)' });
@@ -59,6 +58,7 @@ export default function mount(kit) {
   mkPage(pageL); mkPage(pageR);
   journal.append(pageL, spine, pageR);
   svg.append(journal);
+  svg.append(pencil);
 
   const title = kit.svg('text', { x: 500, y: 490, 'text-anchor': 'middle', 'font-family': 'var(--mono)', 'font-style': 'italic', 'font-size': 20, fill: '#0D0D0E', opacity: 0.7, text: 'things i learned today.' });
   svg.append(title);

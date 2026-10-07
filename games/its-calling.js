@@ -23,24 +23,24 @@ export default function mount(kit) {
   // a hand holding the phone from below: two fingers wrapping the sides, a thumb in front
   const skin = '#D9A27E';
   const handBack = kit.svg('g', {}, [
-    kit.svg('path', { d: 'M 236 760 Q 200 900 260 1010 L 340 1010 Q 300 880 320 790 Z', fill: skin }),
-    kit.svg('path', { d: 'M 764 760 Q 800 900 740 1010 L 660 1010 Q 700 880 680 790 Z', fill: skin }),
+    kit.svg('path', { d: 'M 236 800 Q 200 930 260 1030 L 340 1030 Q 300 910 320 830 Z', fill: skin }),
+    kit.svg('path', { d: 'M 764 800 Q 800 930 740 1030 L 660 1030 Q 700 910 680 830 Z', fill: skin }),
   ]);
   svg.append(handBack);
 
-  shadow(kit, { cx: 500, cy: 1000, rx: 300, ry: 30, opacity: 0.12, parent: svg });
+  shadow(kit, { cx: 500, cy: 1020, rx: 300, ry: 26, opacity: 0.12, parent: svg });
 
   // the phone itself
-  const body = kit.svg('rect', { x: 280, y: 70, width: 440, height: 860, rx: 54, fill: ink });
-  const screen = kit.svg('rect', { x: 300, y: 94, width: 400, height: 812, rx: 36, fill: '#1B2230' });
-  const notch = kit.svg('rect', { x: 440, y: 108, width: 120, height: 26, rx: 13, fill: ink });
+  const body = kit.svg('rect', { x: 280, y: 108, width: 440, height: 860, rx: 54, fill: ink });
+  const screen = kit.svg('rect', { x: 300, y: 132, width: 400, height: 812, rx: 36, fill: '#1B2230' });
+  const notch = kit.svg('rect', { x: 440, y: 146, width: 120, height: 26, rx: 13, fill: ink });
   svg.append(body, screen, notch);
 
   // thumb overlapping the front, drawn after the screen so it reads as holding it
-  const thumb = kit.svg('path', { d: 'M 250 880 Q 220 940 270 990 Q 330 1020 390 980 L 360 880 Q 320 850 250 880 Z', fill: tint(skin, 0.05) });
+  const thumb = kit.svg('path', { d: 'M 250 910 Q 220 970 270 1020 Q 330 1050 390 1010 L 360 910 Q 320 880 250 910 Z', fill: tint(skin, 0.05) });
   svg.append(thumb);
 
-  const screenG = kit.svg('g', {});
+  const screenG = kit.svg('g', { transform: 'translate(0 38)' });
   svg.append(screenG);
 
   const head = heading(kit, { parent: kit.stage, line: "it's calling.", hint: 'slide to answer.', color: '#F7F5F1', hintColor: '#8FA6B8' });
