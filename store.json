@@ -4,7 +4,7 @@
  "url": "https://taktekbot.com/merch/",
  "currency": "USD",
  "checkout": null,
- "debug": true,
+ "debug": false,
  "brand": {
   "paper": "#F7F5F1",
   "ink": "#0D0D0E",
@@ -27,9 +27,72 @@
    "name": "shy dad hat",
    "challenge": "It's shy. Earn its trust.",
    "game": "games/shy.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3600,
+   "images": [
+    {
+     "src": "img/shy/1.jpg",
+     "alt": "shy dad hat, Navy"
+    },
+    {
+     "src": "img/shy/2.jpg",
+     "alt": "shy dad hat, Charcoal Grey"
+    },
+    {
+     "src": "img/shy/3.jpg",
+     "alt": "shy dad hat, Khaki"
+    },
+    {
+     "src": "img/shy/4.jpg",
+     "alt": "shy dad hat, Navy"
+    },
+    {
+     "src": "img/shy/5.jpg",
+     "alt": "shy dad hat, Navy"
+    },
+    {
+     "src": "img/shy/6.jpg",
+     "alt": "shy dad hat, Navy"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558983865,
+     "label": "Khaki",
+     "options": {
+      "colour": "Khaki"
+     }
+    },
+    {
+     "id": 5558983866,
+     "label": "Navy",
+     "options": {
+      "colour": "Navy"
+     }
+    },
+    {
+     "id": 5558983867,
+     "label": "Charcoal Grey",
+     "options": {
+      "colour": "Charcoal Grey"
+     }
+    }
+   ],
+   "description": "A washed dad hat with taktekbot embroidered small on the front. It's shy; it took a while to agree.",
+   "details": [
+    "Otto Cap distressed dad hat",
+    "Embroidered front",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Khaki",
+      "Navy",
+      "Charcoal Grey"
+     ]
+    }
+   ]
   },
   {
    "slug": "still-up",
@@ -37,81 +100,601 @@
    "line": "still up.",
    "challenge": "Open from 1 to 5 in the morning, your time.",
    "game": "games/still-up.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 9400,
+   "images": [
+    {
+     "src": "img/still-up/1.jpg",
+     "alt": "still up hoodie, Black"
+    },
+    {
+     "src": "img/still-up/2.jpg",
+     "alt": "still up hoodie, French Navy"
+    },
+    {
+     "src": "img/still-up/3.jpg",
+     "alt": "still up hoodie, Black"
+    },
+    {
+     "src": "img/still-up/4.jpg",
+     "alt": "still up hoodie, Black"
+    },
+    {
+     "src": "img/still-up/5.jpg",
+     "alt": "still up hoodie, Black"
+    },
+    {
+     "src": "img/still-up/6.jpg",
+     "alt": "still up hoodie, Black"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558983984,
+     "label": "Black / S",
+     "options": {
+      "colour": "Black",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558983991,
+     "label": "Black / M",
+     "options": {
+      "colour": "Black",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558983992,
+     "label": "Black / L",
+     "options": {
+      "colour": "Black",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558983993,
+     "label": "Black / XL",
+     "options": {
+      "colour": "Black",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558983994,
+     "label": "Black / 2XL",
+     "options": {
+      "colour": "Black",
+      "size": "2XL"
+     }
+    },
+    {
+     "id": 5558983995,
+     "label": "French Navy / S",
+     "options": {
+      "colour": "French Navy",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558983996,
+     "label": "French Navy / M",
+     "options": {
+      "colour": "French Navy",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558984000,
+     "label": "French Navy / L",
+     "options": {
+      "colour": "French Navy",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558984001,
+     "label": "French Navy / XL",
+     "options": {
+      "colour": "French Navy",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558984002,
+     "label": "French Navy / 2XL",
+     "options": {
+      "colour": "French Navy",
+      "size": "2XL"
+     }
+    }
+   ],
+   "description": "An organic relaxed hoodie: its face on the chest, the line on the back. It doesn't sleep.",
+   "details": [
+    "Stanley/Stella Slammer 2.0, organic cotton",
+    "Printed front and back",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Black",
+      "French Navy"
+     ]
+    },
+    {
+     "name": "size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    }
+   ]
   },
   {
    "slug": "staring-contest",
    "name": "the eyes tee",
    "challenge": "Win a staring contest.",
    "game": "games/staring-contest.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 4400,
+   "images": [
+    {
+     "src": "img/staring-contest/1.jpg",
+     "alt": "the eyes tee, Sage"
+    },
+    {
+     "src": "img/staring-contest/2.jpg",
+     "alt": "the eyes tee, Chalky Mint"
+    },
+    {
+     "src": "img/staring-contest/3.jpg",
+     "alt": "the eyes tee, Ivory"
+    },
+    {
+     "src": "img/staring-contest/4.jpg",
+     "alt": "the eyes tee, Sage"
+    },
+    {
+     "src": "img/staring-contest/5.jpg",
+     "alt": "the eyes tee, Sage"
+    },
+    {
+     "src": "img/staring-contest/6.jpg",
+     "alt": "the eyes tee, Sage"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558984088,
+     "label": "Sage / S",
+     "options": {
+      "colour": "Sage",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558984089,
+     "label": "Sage / M",
+     "options": {
+      "colour": "Sage",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558984091,
+     "label": "Sage / L",
+     "options": {
+      "colour": "Sage",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558984092,
+     "label": "Sage / XL",
+     "options": {
+      "colour": "Sage",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558984093,
+     "label": "Sage / 2XL",
+     "options": {
+      "colour": "Sage",
+      "size": "2XL"
+     }
+    },
+    {
+     "id": 5558984094,
+     "label": "Ivory / S",
+     "options": {
+      "colour": "Ivory",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558984095,
+     "label": "Ivory / M",
+     "options": {
+      "colour": "Ivory",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558984097,
+     "label": "Ivory / L",
+     "options": {
+      "colour": "Ivory",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558984098,
+     "label": "Ivory / XL",
+     "options": {
+      "colour": "Ivory",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558984100,
+     "label": "Ivory / 2XL",
+     "options": {
+      "colour": "Ivory",
+      "size": "2XL"
+     }
+    },
+    {
+     "id": 5558984101,
+     "label": "Chalky Mint / S",
+     "options": {
+      "colour": "Chalky Mint",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558984102,
+     "label": "Chalky Mint / M",
+     "options": {
+      "colour": "Chalky Mint",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558984103,
+     "label": "Chalky Mint / L",
+     "options": {
+      "colour": "Chalky Mint",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558984104,
+     "label": "Chalky Mint / XL",
+     "options": {
+      "colour": "Chalky Mint",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558984105,
+     "label": "Chalky Mint / 2XL",
+     "options": {
+      "colour": "Chalky Mint",
+      "size": "2XL"
+     }
+    }
+   ],
+   "description": "Just the eyes, stitched on the chest of a garment-dyed heavyweight tee.",
+   "details": [
+    "Comfort Colors 1717, 6.1 oz garment-dyed cotton",
+    "Embroidered chest",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Sage",
+      "Ivory",
+      "Chalky Mint"
+     ]
+    },
+    {
+     "name": "size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    }
+   ]
   },
   {
    "slug": "its-cold",
    "name": "warm beanie",
    "challenge": "It's cold. Warm it up.",
    "game": "games/its-cold.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 5600,
+   "images": [
+    {
+     "src": "img/its-cold/1.jpg",
+     "alt": "warm beanie, Custom"
+    },
+    {
+     "src": "img/its-cold/2.jpg",
+     "alt": "warm beanie, Custom"
+    },
+    {
+     "src": "img/its-cold/3.jpg",
+     "alt": "warm beanie, Custom"
+    },
+    {
+     "src": "img/its-cold/4.jpg",
+     "alt": "warm beanie, Custom"
+    },
+    {
+     "src": "img/its-cold/5.jpg",
+     "alt": "warm beanie, Custom"
+    },
+    {
+     "src": "img/its-cold/6.jpg",
+     "alt": "warm beanie, Custom"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558998105,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A knitted beanie with a row of little taktekbots going round.",
+   "details": [
+    "Custom knitted jacquard beanie",
+    "Knitted, not printed",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "put-it-to-sleep",
    "name": "sleeping pillow",
    "challenge": "It never sleeps. Put it to sleep.",
    "game": "games/put-it-to-sleep.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 5200,
+   "images": [
+    {
+     "src": "img/put-it-to-sleep/1.jpg",
+     "alt": "sleeping pillow"
+    },
+    {
+     "src": "img/put-it-to-sleep/2.jpg",
+     "alt": "sleeping pillow"
+    },
+    {
+     "src": "img/put-it-to-sleep/3.jpg",
+     "alt": "sleeping pillow"
+    },
+    {
+     "src": "img/put-it-to-sleep/4.jpg",
+     "alt": "sleeping pillow"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558985619,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A pillow with taktekbot asleep on it. First time for everything.",
+   "details": [
+    "Cotton, 18″×18″",
+    "Insert included",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "hydrate",
    "name": "bot bottle",
    "challenge": "Hydrate the bot.",
    "game": "games/hydrate.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 4000,
+   "images": [
+    {
+     "src": "img/hydrate/1.jpg",
+     "alt": "bot bottle, White"
+    },
+    {
+     "src": "img/hydrate/2.jpg",
+     "alt": "bot bottle, White"
+    },
+    {
+     "src": "img/hydrate/3.jpg",
+     "alt": "bot bottle, White"
+    },
+    {
+     "src": "img/hydrate/4.jpg",
+     "alt": "bot bottle, White"
+    },
+    {
+     "src": "img/hydrate/5.jpg",
+     "alt": "bot bottle, White"
+    },
+    {
+     "src": "img/hydrate/6.jpg",
+     "alt": "bot bottle, White"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5559034035,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A stainless bottle with a small taktekbot on the side. Keep it topped up.",
+   "details": [
+    "Stainless steel, 17 oz, insulated",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "give-things-eyes",
    "name": "stick-on eyes",
    "challenge": "Give three things eyes.",
    "game": "games/give-things-eyes.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 1200,
+   "images": [
+    {
+     "src": "img/give-things-eyes/1.jpg",
+     "alt": "stick-on eyes, Satin"
+    },
+    {
+     "src": "img/give-things-eyes/2.jpg",
+     "alt": "stick-on eyes, Satin"
+    },
+    {
+     "src": "img/give-things-eyes/3.jpg",
+     "alt": "stick-on eyes, Satin"
+    },
+    {
+     "src": "img/give-things-eyes/4.jpg",
+     "alt": "stick-on eyes, Satin"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558988813,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A sheet of twelve pairs of eyes. Stick them on the kettle, the fridge, your colleague's monitor.",
+   "details": [
+    "Kiss-cut vinyl, 3″×4″ sheet",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "coffee",
    "name": "it made you coffee mug",
    "challenge": "It made you coffee. Stop it at the line.",
    "game": "games/coffee.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 2800,
+   "images": [
+    {
+     "src": "img/coffee/1.jpg",
+     "alt": "it made you coffee mug, Green"
+    },
+    {
+     "src": "img/coffee/2.jpg",
+     "alt": "it made you coffee mug, Green"
+    },
+    {
+     "src": "img/coffee/3.jpg",
+     "alt": "it made you coffee mug, Green"
+    },
+    {
+     "src": "img/coffee/4.jpg",
+     "alt": "it made you coffee mug, Green"
+    },
+    {
+     "src": "img/coffee/5.jpg",
+     "alt": "it made you coffee mug, Green"
+    },
+    {
+     "src": "img/coffee/6.jpg",
+     "alt": "it made you coffee mug, Green"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5559034080,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A mug with green inside and taktekbot peeking up from the bottom of the outside.",
+   "details": [
+    "Ceramic, 11 oz, green inside",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "hide-and-seek",
    "name": "the patch",
    "challenge": "It's hiding on this page. Find it four times.",
    "game": "games/hide-and-seek.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 1600,
+   "images": [
+    {
+     "src": "img/hide-and-seek/1.jpg",
+     "alt": "the patch, White"
+    },
+    {
+     "src": "img/hide-and-seek/2.jpg",
+     "alt": "the patch, White"
+    },
+    {
+     "src": "img/hide-and-seek/3.jpg",
+     "alt": "the patch, White"
+    },
+    {
+     "src": "img/hide-and-seek/4.jpg",
+     "alt": "the patch, White"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558989255,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "An embroidered patch for a bag, a jacket, a laptop sleeve.",
+   "details": [
+    "Embroidered patch, 3.5″×2.25″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "lead-it-home",
    "name": "bot pillow",
    "challenge": "Lead it home without losing it.",
    "game": "games/lead-it-home.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 4400,
+   "images": [
+    {
+     "src": "img/lead-it-home/1.jpg",
+     "alt": "bot pillow"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558989357,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A round pillow shaped like taktekbot. It follows you home.",
+   "details": [
+    "Cut-and-sew shaped pillow, 16″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "gate-12",
@@ -119,54 +702,399 @@
    "line": "curious, not very independent.",
    "challenge": "Collect it at gate 12 before the gate closes.",
    "game": "games/gate-12.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 2400,
+   "images": [
+    {
+     "src": "img/gate-12/1.jpg",
+     "alt": "luggage tag"
+    },
+    {
+     "src": "img/gate-12/2.jpg",
+     "alt": "luggage tag"
+    },
+    {
+     "src": "img/gate-12/3.jpg",
+     "alt": "luggage tag"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992393,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A luggage tag for the bag it's hiding in.",
+   "details": [
+    "Luggage tag, 2.4″×4″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "find-the-bot",
    "name": "the desk mat",
    "challenge": "One dot looks back. Find it.",
    "game": "games/find-the-bot.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3800,
+   "images": [
+    {
+     "src": "img/find-the-bot/1.jpg",
+     "alt": "the desk mat, Black"
+    },
+    {
+     "src": "img/find-the-bot/2.jpg",
+     "alt": "the desk mat, Black"
+    },
+    {
+     "src": "img/find-the-bot/3.jpg",
+     "alt": "the desk mat, Black"
+    },
+    {
+     "src": "img/find-the-bot/4.jpg",
+     "alt": "the desk mat, Black"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992469,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A big desk mat covered in dots. One of them is looking at you.",
+   "details": [
+    "Desk mat, 16″×32″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "its-calling",
    "name": "the phone case",
    "challenge": "It's calling. Answer.",
    "game": "games/its-calling.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3600,
+   "images": [
+    {
+     "src": "img/its-calling/1.jpg",
+     "alt": "the phone case"
+    },
+    {
+     "src": "img/its-calling/2.jpg",
+     "alt": "the phone case"
+    },
+    {
+     "src": "img/its-calling/3.jpg",
+     "alt": "the phone case"
+    },
+    {
+     "src": "img/its-calling/4.jpg",
+     "alt": "the phone case"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992536,
+     "label": "iPhone 15",
+     "options": {
+      "size": "iPhone 15"
+     }
+    },
+    {
+     "id": 5558992537,
+     "label": "iPhone 15 Pro",
+     "options": {
+      "size": "iPhone 15 Pro"
+     }
+    },
+    {
+     "id": 5558992538,
+     "label": "iPhone 15 Pro Max",
+     "options": {
+      "size": "iPhone 15 Pro Max"
+     }
+    },
+    {
+     "id": 5558992539,
+     "label": "iPhone 16",
+     "options": {
+      "size": "iPhone 16"
+     }
+    },
+    {
+     "id": 5558992540,
+     "label": "iPhone 16 Pro",
+     "options": {
+      "size": "iPhone 16 Pro"
+     }
+    },
+    {
+     "id": 5558992541,
+     "label": "iPhone 16 Pro Max",
+     "options": {
+      "size": "iPhone 16 Pro Max"
+     }
+    },
+    {
+     "id": 5558992542,
+     "label": "iPhone 17",
+     "options": {
+      "size": "iPhone 17"
+     }
+    },
+    {
+     "id": 5558992543,
+     "label": "iPhone 17 Pro",
+     "options": {
+      "size": "iPhone 17 Pro"
+     }
+    },
+    {
+     "id": 5558992544,
+     "label": "iPhone 17 Pro Max",
+     "options": {
+      "size": "iPhone 17 Pro Max"
+     }
+    },
+    {
+     "id": 5558992545,
+     "label": "iPhone 17 Air",
+     "options": {
+      "size": "iPhone 17 Air"
+     }
+    }
+   ],
+   "description": "A clear MagSafe case with taktekbot next to your camera. It wants to see too.",
+   "details": [
+    "Clear MagSafe case",
+    "iPhone 15, 16 and 17 models",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "size",
+     "values": [
+      "iPhone 15",
+      "iPhone 15 Pro",
+      "iPhone 15 Pro Max",
+      "iPhone 16",
+      "iPhone 16 Pro",
+      "iPhone 16 Pro Max",
+      "iPhone 17",
+      "iPhone 17 Pro",
+      "iPhone 17 Pro Max",
+      "iPhone 17 Air"
+     ]
+    }
+   ]
   },
   {
    "slug": "it-climbs-in",
    "name": "the tote",
    "challenge": "Pack the bag. Make room for it.",
    "game": "games/it-climbs-in.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 5200,
+   "images": [
+    {
+     "src": "img/it-climbs-in/1.jpg",
+     "alt": "the tote, Denim Blue"
+    },
+    {
+     "src": "img/it-climbs-in/2.jpg",
+     "alt": "the tote, Denim Blue"
+    },
+    {
+     "src": "img/it-climbs-in/3.jpg",
+     "alt": "the tote, Denim Blue"
+    },
+    {
+     "src": "img/it-climbs-in/4.jpg",
+     "alt": "the tote, Denim Blue"
+    },
+    {
+     "src": "img/it-climbs-in/5.jpg",
+     "alt": "the tote, Denim Blue"
+    },
+    {
+     "src": "img/it-climbs-in/6.jpg",
+     "alt": "the tote, Denim Blue"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992721,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "An organic denim tote with taktekbot climbing out of the top.",
+   "details": [
+    "Mantis organic denim tote",
+    "Printed front",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "knit-the-row",
    "name": "the cardigan",
    "challenge": "Knit the row.",
    "game": "games/knit-the-row.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 12800,
+   "images": [
+    {
+     "src": "img/knit-the-row/1.jpg",
+     "alt": "the cardigan, Custom"
+    },
+    {
+     "src": "img/knit-the-row/2.jpg",
+     "alt": "the cardigan, Custom"
+    },
+    {
+     "src": "img/knit-the-row/3.jpg",
+     "alt": "the cardigan, Custom"
+    },
+    {
+     "src": "img/knit-the-row/4.jpg",
+     "alt": "the cardigan, Custom"
+    },
+    {
+     "src": "img/knit-the-row/5.jpg",
+     "alt": "the cardigan, Custom"
+    },
+    {
+     "src": "img/knit-the-row/6.jpg",
+     "alt": "the cardigan, Custom"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992807,
+     "label": "S",
+     "options": {
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558992808,
+     "label": "M",
+     "options": {
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558992809,
+     "label": "L",
+     "options": {
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558992810,
+     "label": "XL",
+     "options": {
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558992811,
+     "label": "2XL",
+     "options": {
+      "size": "2XL"
+     }
+    }
+   ],
+   "description": "A knitted cardigan covered in tiny taktekbots, in bone and grass green.",
+   "details": [
+    "Custom knitted jacquard cardigan",
+    "Knitted, not printed",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    }
+   ]
   },
   {
    "slug": "follow-the-sun",
    "name": "the bucket hat",
    "challenge": "Keep it in the shade until sunset.",
    "game": "games/follow-the-sun.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3800,
+   "images": [
+    {
+     "src": "img/follow-the-sun/1.jpg",
+     "alt": "the bucket hat, Navy"
+    },
+    {
+     "src": "img/follow-the-sun/2.jpg",
+     "alt": "the bucket hat, Khaki"
+    },
+    {
+     "src": "img/follow-the-sun/3.jpg",
+     "alt": "the bucket hat, White"
+    },
+    {
+     "src": "img/follow-the-sun/4.jpg",
+     "alt": "the bucket hat, Navy"
+    },
+    {
+     "src": "img/follow-the-sun/5.jpg",
+     "alt": "the bucket hat, Navy"
+    },
+    {
+     "src": "img/follow-the-sun/6.jpg",
+     "alt": "the bucket hat, Navy"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992827,
+     "label": "Khaki",
+     "options": {
+      "colour": "Khaki"
+     }
+    },
+    {
+     "id": 5558992828,
+     "label": "White",
+     "options": {
+      "colour": "White"
+     }
+    },
+    {
+     "id": 5558992829,
+     "label": "Navy",
+     "options": {
+      "colour": "Navy"
+     }
+    }
+   ],
+   "description": "A bucket hat with a small taktekbot stitched on the front, for sunny days in the shade.",
+   "details": [
+    "Flexfit cotton bucket hat",
+    "Embroidered front",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Khaki",
+      "White",
+      "Navy"
+     ]
+    }
+   ]
   },
   {
    "slug": "why",
@@ -174,9 +1102,140 @@
    "line": "curious.",
    "challenge": "Answer every why.",
    "game": "games/why.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 7400,
+   "images": [
+    {
+     "src": "img/why/1.jpg",
+     "alt": "curious crewneck, Desert Dust"
+    },
+    {
+     "src": "img/why/2.jpg",
+     "alt": "curious crewneck, White"
+    },
+    {
+     "src": "img/why/3.jpg",
+     "alt": "curious crewneck, Desert Dust"
+    },
+    {
+     "src": "img/why/4.jpg",
+     "alt": "curious crewneck, Desert Dust"
+    },
+    {
+     "src": "img/why/5.jpg",
+     "alt": "curious crewneck, Desert Dust"
+    },
+    {
+     "src": "img/why/6.jpg",
+     "alt": "curious crewneck, Desert Dust"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558992944,
+     "label": "Desert Dust / S",
+     "options": {
+      "colour": "Desert Dust",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558992945,
+     "label": "Desert Dust / M",
+     "options": {
+      "colour": "Desert Dust",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558992946,
+     "label": "Desert Dust / L",
+     "options": {
+      "colour": "Desert Dust",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558992947,
+     "label": "Desert Dust / XL",
+     "options": {
+      "colour": "Desert Dust",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558992948,
+     "label": "Desert Dust / 2XL",
+     "options": {
+      "colour": "Desert Dust",
+      "size": "2XL"
+     }
+    },
+    {
+     "id": 5558992949,
+     "label": "White / S",
+     "options": {
+      "colour": "White",
+      "size": "S"
+     }
+    },
+    {
+     "id": 5558992950,
+     "label": "White / M",
+     "options": {
+      "colour": "White",
+      "size": "M"
+     }
+    },
+    {
+     "id": 5558992951,
+     "label": "White / L",
+     "options": {
+      "colour": "White",
+      "size": "L"
+     }
+    },
+    {
+     "id": 5558992952,
+     "label": "White / XL",
+     "options": {
+      "colour": "White",
+      "size": "XL"
+     }
+    },
+    {
+     "id": 5558992953,
+     "label": "White / 2XL",
+     "options": {
+      "colour": "White",
+      "size": "2XL"
+     }
+    }
+   ],
+   "description": "An organic crewneck: taktekbot looking up, and one word under it.",
+   "details": [
+    "Stanley/Stella Changer 2.0, organic cotton",
+    "Printed front",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": [
+    {
+     "name": "colour",
+     "values": [
+      "Desert Dust",
+      "White"
+     ]
+    },
+    {
+     "name": "size",
+     "values": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+     ]
+    }
+   ]
   },
   {
    "slug": "three-things",
@@ -184,9 +1243,39 @@
    "line": "things i learned today.",
    "challenge": "Teach it three things.",
    "game": "games/three-things.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3200,
+   "images": [
+    {
+     "src": "img/three-things/1.jpg",
+     "alt": "the journal, White"
+    },
+    {
+     "src": "img/three-things/2.jpg",
+     "alt": "the journal, White"
+    },
+    {
+     "src": "img/three-things/3.jpg",
+     "alt": "the journal, White"
+    },
+    {
+     "src": "img/three-things/4.jpg",
+     "alt": "the journal, White"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558993035,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A hardcover journal for the things you taught it.",
+   "details": [
+    "Hardcover matte journal, 8″×5.75″",
+    "Lined pages",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "never-slept",
@@ -194,18 +1283,92 @@
    "line": "the bot who never slept.",
    "challenge": "Read it to the end.",
    "game": "games/never-slept.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 3200,
+   "images": [
+    {
+     "src": "img/never-slept/1.jpg",
+     "alt": "the board book, White"
+    },
+    {
+     "src": "img/never-slept/2.jpg",
+     "alt": "the board book, White"
+    },
+    {
+     "src": "img/never-slept/3.jpg",
+     "alt": "the board book, White"
+    },
+    {
+     "src": "img/never-slept/4.jpg",
+     "alt": "the board book, White"
+    },
+    {
+     "src": "img/never-slept/5.jpg",
+     "alt": "the board book, White"
+    },
+    {
+     "src": "img/never-slept/6.jpg",
+     "alt": "the board book, White"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5559040562,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "A board book: the bot who never slept. Six pages, read aloud in two minutes.",
+   "details": [
+    "Board book, 6″×6″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   },
   {
    "slug": "moods",
    "name": "the five moods buttons",
    "challenge": "Match the mood, five times.",
    "game": "games/moods.js",
-   "price": 0,
-   "images": [],
-   "variants": []
+   "price": 1600,
+   "images": [
+    {
+     "src": "img/moods/1.jpg",
+     "alt": "the five moods buttons, White"
+    },
+    {
+     "src": "img/moods/2.jpg",
+     "alt": "the five moods buttons, White"
+    },
+    {
+     "src": "img/moods/3.jpg",
+     "alt": "the five moods buttons, White"
+    },
+    {
+     "src": "img/moods/4.jpg",
+     "alt": "the five moods buttons, White"
+    },
+    {
+     "src": "img/moods/5.jpg",
+     "alt": "the five moods buttons, White"
+    },
+    {
+     "src": "img/moods/6.jpg",
+     "alt": "the five moods buttons, White"
+    }
+   ],
+   "variants": [
+    {
+     "id": 5558993055,
+     "label": "",
+     "options": {}
+    }
+   ],
+   "description": "Five pin buttons, five moods: happy, sleepy, curious, side-eye, shocked.",
+   "details": [
+    "Set of 5 pin buttons, 1.25″",
+    "Made to order by Printful; ships in about a week. Shipping included."
+   ],
+   "options": []
   }
  ]
 }

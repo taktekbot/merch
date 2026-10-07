@@ -1,92 +1,103 @@
 // B01 shy dad hat — "It's shy. Earn its trust."
-// The bot hides at the edge. Hold still and it creeps toward the middle. Move and it ducks
-// back out. Reach the middle and it trusts you.
-function drawBot(kit, svg, { cx = 500, cy = 500, scale = 1, eyeFill } = {}) {
-  const k = scale * (1000 / 1024);
-  const r = 232 * k, eyeW = 56 * k, baseH = 120 * k, rx = 28 * k;
-  const ex1 = -92 * k, ex2 = 36 * k, ey = -70 * k;
-  const body = kit.svg('circle', { cx, cy, r, fill: kit.colors.accent || '#00A862' });
-  const mk = () => kit.svg('rect', { width: eyeW, height: baseH, rx, fill: eyeFill || 'var(--card)' });
-  const eyeL = mk(), eyeR = mk();
-  svg.append(body, eyeL, eyeR);
-  const api = {
-    cx, cy, k,
-    pos(x, y) { api.cx = x; api.cy = y; body.setAttribute('cx', x); body.setAttribute('cy', y); api.look(api.lx || 0, api.ly || 0); },
-    look(dx = 0, dy = 0) {
-      api.lx = dx; api.ly = dy;
-      const ox = dx * 16 * k, oy = dy * 12 * k;
-      eyeL.setAttribute('x', api.cx + ex1 - eyeW / 2 + ox); eyeL.setAttribute('y', api.cy + ey - (api.h ?? baseH) / 2 + oy);
-      eyeR.setAttribute('x', api.cx + ex2 - eyeW / 2 + ox); eyeR.setAttribute('y', api.cy + ey - (api.h ?? baseH) / 2 + oy);
-    },
-    openness(p) {
-      const h = Math.max(4 * k, baseH * p);
-      api.h = h;
-      eyeL.setAttribute('height', h); eyeR.setAttribute('height', h);
-      api.look(api.lx || 0, api.ly || 0);
-    },
-    scale(s) { api.k = s * (1000 / 1024); body.setAttribute('r', 232 * api.k); },
-  };
-  api.openness(1);
-  return api;
-}
+// A cosy room: the bot is tucked behind the sofa arm. Hold still and it creeps out,
+// peeking and blushing; move and it ducks back. Reach full trust and it crosses the rug
+// to sit beside you.
+import { createBot, room, hideBehind, shadow, heading } from './_bot.js';
 
 export default function mount(kit) {
+  const card = (kit.colors && kit.colors.card) || '#EFECE6';
   const svg = kit.svg('svg', { viewBox: '0 0 1000 1000' });
   kit.stage.append(svg);
-  const label = kit.el('p', { class: 'g-mono', style: { position: 'absolute', left: '0', right: '0', top: '5%', textAlign: 'center', margin: '0', color: 'var(--muted)' }, text: 'move and it ducks. hold still and it comes closer.' });
-  kit.stage.append(label);
 
-  const corner = { x: 160, y: 820 }; // tucked low-left, like behind a hat brim
-  const center = { x: 500, y: 500 };
-  const bot = drawBot(kit, svg, { cx: corner.x, cy: corner.y, scale: 0.7 });
+  room(kit, { parent: svg, wall: '#E8DFCF', floor: '#C9764F', floorY: 660 });
+  // a soft rug, the "beside you" spot
+  const rug = kit.svg('ellipse', { cx: 560, cy: 790, rx: 220, ry: 60, fill: '#F2D98A', opacity: 0.35 });
+  const rugRing = kit.svg('ellipse', { cx: 560, cy: 790, rx: 220, ry: 60, fill: 'none', stroke: '#F2D98A', 'stroke-width': 4, opacity: 0.5 });
+  svg.append(rug, rugRing);
+  // a cushion waiting at the destination
+  const cushion = kit.svg('ellipse', { cx: 560, cy: 706, rx: 64, ry: 24, fill: '#8FA6B8' });
+  const cushionSeam = kit.svg('ellipse', { cx: 560, cy: 706, rx: 64, ry: 24, fill: 'none', stroke: '#8FA6B8', 'stroke-width': 3, opacity: 0.4 });
+  svg.append(cushion, cushionSeam);
 
-  let progress = 0; // 0 at corner, 1 at center (trust)
-  let idleMs = 0;
-  let duckUntil = 0;
-  let blinkAt = 2000 + Math.random() * 2000;
-  const GRACE = 450, APPROACH_MS = 9000, MOVE_WOBBLE = 0.65;
+  const start = { x: 300, y: 702 };
+  const dest = { x: 560, y: 698 };
+  const bot = createBot(kit, { cx: start.x, cy: start.y, r: 140, bg: card, shadow: true });
+  const limbs = bot.addLimbs({ arms: false, feet: true });
+  svg.append(bot.group);
 
-  const place = () => {
-    const x = corner.x + (center.x - corner.x) * progress;
-    const y = corner.y + (center.y - corner.y) * progress;
-    const s = 0.7 + 0.3 * progress;
-    bot.scale(s);
-    bot.pos(x, y);
-  };
+  // the door sits in front, so it occludes the bot's left side until it walks clear
+  hideBehind(kit, { parent: svg, x: 50, y: 140, w: 190, h: 520, color: '#2F4F46' });
+  // a little potted plant in the far corner, well clear of the bot
+  const potX = 112, potY = 724;
+  const leaf = (dx, dy, rot) => kit.svg('path', {
+    d: `M 0 0 Q ${dx * 0.3} ${dy * 0.5} ${dx} ${dy}`,
+    fill: 'none', stroke: '#2F4F46', 'stroke-width': 10, 'stroke-linecap': 'round',
+    transform: `translate(${potX} ${potY}) rotate(${rot})`,
+  });
+  svg.append(
+    shadow(kit, { cx: potX, cy: potY + 44, rx: 36, ry: 8 }),
+    kit.svg('path', { d: `M ${potX - 28} ${potY} L ${potX + 28} ${potY} L ${potX + 22} ${potY + 42} L ${potX - 22} ${potY + 42} Z`, fill: '#6E4A33' }),
+    leaf(-46, -70, -8), leaf(-10, -86, 6), leaf(30, -66, 20),
+  );
+
+  const head = heading(kit, { parent: kit.stage, line: 'earn its trust.', hint: 'hold still. it ducks if you move.' });
+  bot.autoBlink(kit, { min: 2400, max: 4400 });
+
+  let progress = 0, idleMs = 0, duckUntil = 0, hintHidden = false, finished = false, walkPhase = 0;
+  const GRACE = 450, APPROACH_MS = 8600, DUCK_MOVE = 0.16;
+
+  function place() {
+    const x = start.x + (dest.x - start.x) * progress;
+    const y = start.y + (dest.y - start.y) * progress;
+    bot.moveTo(x, y);
+    bot.blush(progress > 0.08 && progress < 0.98);
+  }
   place();
 
   kit.onActivity(() => {
-    if (kit.won) return;
+    if (finished) return;
+    if (!hintHidden) { hintHidden = true; head.hide(); }
     idleMs = 0;
     duckUntil = performance.now() + 260;
-    progress = Math.max(0, progress - MOVE_WOBBLE * 0.2);
+    progress = Math.max(0, progress - DUCK_MOVE);
     place();
-    label.textContent = 'it ducked. hold still again.';
+    bot.squash(kit, { amount: 0.14, duration: 160 });
   });
 
   kit.loop((dt) => {
+    if (finished) return;
     const now = performance.now();
-    if (now < duckUntil) { bot.look((Math.random() - 0.5) * 2, -0.6); return; }
+    if (now < duckUntil) { bot.look((Math.random() - 0.5) * 3, -0.6); bot.tilt(0); return; }
     idleMs += dt;
     if (idleMs > GRACE && progress < 1) {
+      const before = progress;
       progress = Math.min(1, progress + dt / APPROACH_MS);
       place();
-      if (progress > 0.15) label.textContent = "it's creeping closer. keep still.";
-    }
-    blinkAt -= dt;
-    if (blinkAt <= 0) {
-      bot.openness(0.08);
-      kit.after(120, () => bot.openness(1));
-      blinkAt = 2200 + Math.random() * 2600;
+      if (before < 1 && progress >= 1) return finish();
+      walkPhase += dt / 260;
+      limbs.step(walkPhase % 1);
+      bot.tilt(Math.sin(walkPhase) * 3);
     } else {
       bot.look(Math.sin(now / 1400) * 0.3, Math.cos(now / 1900) * 0.2);
     }
     kit.status(`${Math.round(progress * 100)}% trust`);
-    if (progress >= 1) {
-      label.textContent = 'it trusts you.';
-      bot.openness(1.1);
-      kit.win("ok. you can see it now.");
-      return false;
-    }
   });
+
+  function finish() {
+    finished = true;
+    bot.blush(false);
+    kit.status('100% trust');
+    bot.walkTo(kit, dest.x, dest.y, 500, () => {
+      bot.squash(kit, { amount: 0.26, duration: 260 });
+      bot.tilt(-3);
+      bot.look(0, -6);
+      bot.height(0.42);
+      bot.curl(24);
+      kit.after(500, () => {
+        const big = kit.el('p', { class: 'g-big', style: { position: 'absolute', left: '14%', right: '4%', top: '72%', textAlign: 'center', margin: '0', fontSize: 'clamp(22px, 5.2vw, 40px)' }, text: 'it trusts you.' });
+        kit.stage.append(big);
+        kit.after(900, () => kit.win('ok. you can see it now.'));
+      });
+    });
+  }
 }
