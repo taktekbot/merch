@@ -16,7 +16,7 @@
  },
  "printfulStoreId": 18869094,
  "headline": "It wants to come with you.",
- "intro": "Twenty things with taktekbot on them. It's curious, not very independent, and it doesn't hand itself over easily. Win each one first.",
+ "intro": "Nineteen things with taktekbot on them. It's curious, not very independent, and it doesn't hand itself over easily. Win each one first.",
  "homeLink": {
   "href": "https://taktekbot.com/",
   "label": "taktekbot.com"
@@ -92,7 +92,8 @@
       "Charcoal Grey"
      ]
     }
-   ]
+   ],
+   "key": "B01"
   },
   {
    "slug": "still-up",
@@ -233,7 +234,8 @@
       "2XL"
      ]
     }
-   ]
+   ],
+   "key": "B02"
   },
   {
    "slug": "staring-contest",
@@ -414,7 +416,8 @@
       "2XL"
      ]
     }
-   ]
+   ],
+   "key": "B03"
   },
   {
    "slug": "its-cold",
@@ -470,7 +473,8 @@
       "Black"
      ]
     }
-   ]
+   ],
+   "key": "B04"
   },
   {
    "slug": "put-it-to-sleep",
@@ -509,7 +513,8 @@
     "Insert included",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B05"
   },
   {
    "slug": "hydrate",
@@ -555,7 +560,8 @@
     "Stainless steel, 17 oz, insulated",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B06"
   },
   {
    "slug": "give-things-eyes",
@@ -594,7 +600,8 @@
     "Printed backing card",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B07"
   },
   {
    "slug": "coffee",
@@ -640,7 +647,8 @@
     "Ceramic, 11 oz, green inside",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B08"
   },
   {
    "slug": "hide-and-seek",
@@ -682,7 +690,8 @@
     "Embroidered patch, 3″ circle",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B09"
   },
   {
    "slug": "lead-it-home",
@@ -708,7 +717,8 @@
     "Cut-and-sew shaped pillow, 16″",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B10"
   },
   {
    "slug": "gate-12",
@@ -743,7 +753,8 @@
     "Luggage tag, 2.4″×4″",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B11"
   },
   {
    "slug": "find-the-bot",
@@ -781,7 +792,8 @@
     "Desk mat, 16″×32″",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B12"
   },
   {
    "slug": "its-calling",
@@ -901,7 +913,18 @@
       "iPhone 17 Air"
      ]
     }
-   ]
+   ],
+   "key": "B13"
+  },
+  {
+   "key": "B21",
+   "slug": "face-case",
+   "name": "the face case",
+   "challenge": "Line it up with the charger. Wake it up.",
+   "game": "games/face-case.js",
+   "price": 0,
+   "images": [],
+   "variants": []
   },
   {
    "slug": "it-climbs-in",
@@ -948,167 +971,8 @@
     "Printed front",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
-  },
-  {
-   "slug": "knit-the-row",
-   "name": "eyes in the dark cardigan",
-   "challenge": "Knit the row.",
-   "game": "games/knit-the-row.js",
-   "price": 12800,
-   "images": [
-    {
-     "src": "img/knit-the-row/1.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    },
-    {
-     "src": "img/knit-the-row/2.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    },
-    {
-     "src": "img/knit-the-row/3.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    },
-    {
-     "src": "img/knit-the-row/4.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    },
-    {
-     "src": "img/knit-the-row/5.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    },
-    {
-     "src": "img/knit-the-row/6.jpg",
-     "alt": "eyes in the dark cardigan, Custom"
-    }
-   ],
-   "variants": [
-    {
-     "id": 5559192435,
-     "label": "S",
-     "options": {
-      "size": "S"
-     }
-    },
-    {
-     "id": 5559192440,
-     "label": "M",
-     "options": {
-      "size": "M"
-     }
-    },
-    {
-     "id": 5559192449,
-     "label": "L",
-     "options": {
-      "size": "L"
-     }
-    },
-    {
-     "id": 5559192458,
-     "label": "XL",
-     "options": {
-      "size": "XL"
-     }
-    },
-    {
-     "id": 5559192467,
-     "label": "2XL",
-     "options": {
-      "size": "2XL"
-     }
-    }
-   ],
-   "description": "A black knitted cardigan with little bone-coloured eyes peeking out all over. One pair has fallen asleep.",
-   "details": [
-    "Custom knitted jacquard cardigan",
-    "Knitted, not printed",
-    "Made to order by Printful; ships in about a week. Shipping included."
-   ],
-   "options": [
-    {
-     "name": "size",
-     "values": [
-      "S",
-      "M",
-      "L",
-      "XL",
-      "2XL"
-     ]
-    }
-   ]
-  },
-  {
-   "slug": "follow-the-sun",
-   "name": "the bucket hat",
-   "challenge": "Keep it in the shade until sunset.",
-   "game": "games/follow-the-sun.js",
-   "price": 3800,
-   "images": [
-    {
-     "src": "img/follow-the-sun/1.jpg",
-     "alt": "the bucket hat, Navy"
-    },
-    {
-     "src": "img/follow-the-sun/2.jpg",
-     "alt": "the bucket hat, Khaki"
-    },
-    {
-     "src": "img/follow-the-sun/3.jpg",
-     "alt": "the bucket hat, White"
-    },
-    {
-     "src": "img/follow-the-sun/4.jpg",
-     "alt": "the bucket hat, Navy"
-    },
-    {
-     "src": "img/follow-the-sun/5.jpg",
-     "alt": "the bucket hat, Navy"
-    },
-    {
-     "src": "img/follow-the-sun/6.jpg",
-     "alt": "the bucket hat, Navy"
-    }
-   ],
-   "variants": [
-    {
-     "id": 5558992827,
-     "label": "Khaki",
-     "options": {
-      "colour": "Khaki"
-     }
-    },
-    {
-     "id": 5558992828,
-     "label": "White",
-     "options": {
-      "colour": "White"
-     }
-    },
-    {
-     "id": 5558992829,
-     "label": "Navy",
-     "options": {
-      "colour": "Navy"
-     }
-    }
-   ],
-   "description": "A bucket hat with a small taktekbot stitched on the front, for sunny days in the shade.",
-   "details": [
-    "Flexfit cotton bucket hat",
-    "Embroidered front",
-    "Made to order by Printful; ships in about a week. Shipping included."
-   ],
-   "options": [
-    {
-     "name": "colour",
-     "values": [
-      "Khaki",
-      "White",
-      "Navy"
-     ]
-    }
-   ]
+   "options": [],
+   "key": "B14"
   },
   {
    "slug": "why",
@@ -1249,7 +1113,8 @@
       "2XL"
      ]
     }
-   ]
+   ],
+   "key": "B17"
   },
   {
    "slug": "three-things",
@@ -1289,7 +1154,8 @@
     "Lined pages",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B18"
   },
   {
    "slug": "never-slept",
@@ -1336,7 +1202,8 @@
     "Board book, 6″×6″",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B19"
   },
   {
    "slug": "moods",
@@ -1382,7 +1249,8 @@
     "Set of 5 pin buttons, 1.25″",
     "Made to order by Printful; ships in about a week. Shipping included."
    ],
-   "options": []
+   "options": [],
+   "key": "B20"
   }
  ]
 }
