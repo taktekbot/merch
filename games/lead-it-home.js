@@ -59,7 +59,7 @@ export default function mount(kit) {
   svg.append(bot.group);
   bot.autoBlink(kit, { min: 2200, max: 3800 });
 
-  const head = heading(kit, { parent: kit.stage, line: 'lead it home.', hint: 'move slowly. it will follow.' });
+  const head = heading(kit, { parent: kit.stage, line: 'lead it home.', hint: 'move slowly. it will follow.', color: '#F7F5F1', hintColor: '#B9C6D2' });
   let hintHidden = false;
 
   let cursor = { x: start.x, y: start.y };

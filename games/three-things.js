@@ -85,7 +85,7 @@ export default function mount(kit) {
   }
   renderPage();
 
-  const head = heading(kit, { parent: kit.stage, line: 'things i learned today.', hint: 'tell it something true you learned today.' });
+  const head = heading(kit, { parent: kit.stage, line: 'things i learned today.', hint: 'tell it something true you learned today.', color: '#F7F5F1', hintColor: '#B9C6D2' });
   let hintHidden = false;
 
   const row = kit.el('div', { style: { position: 'absolute', left: '6%', right: '6%', bottom: '4%', display: 'flex', gap: '8px' } });

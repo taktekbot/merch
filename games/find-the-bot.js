@@ -60,7 +60,7 @@ export default function mount(kit) {
   }
 
   const special = dots.find((d) => d.isSpecial);
-  const head = heading(kit, { parent: kit.stage, line: 'find the bot.', hint: 'one dot blinks. watch closely.' });
+  const head = heading(kit, { parent: kit.stage, line: 'find the bot.', hint: 'one dot blinks. watch closely.', hintColor: '#0D0D0E' });
   let won = false;
 
   function blink() {

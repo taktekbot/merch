@@ -43,7 +43,7 @@ export default function mount(kit) {
   const screenG = kit.svg('g', { transform: 'translate(0 38)' });
   svg.append(screenG);
 
-  const head = heading(kit, { parent: kit.stage, line: "it's calling.", hint: 'slide to answer.', color: '#F7F5F1', hintColor: '#8FA6B8' });
+  const head = heading(kit, { parent: kit.stage, line: "it's calling.", hint: 'slide to answer.' });
   let hintHidden = false;
   const hideHint = () => { if (!hintHidden) { hintHidden = true; head.hide(); } };
 
