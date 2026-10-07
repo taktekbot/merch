@@ -31,27 +31,27 @@
    "images": [
     {
      "src": "img/shy/1.jpg",
-     "alt": "shy dad hat, Navy"
-    },
-    {
-     "src": "img/shy/2.jpg",
-     "alt": "shy dad hat, Charcoal Grey"
-    },
-    {
-     "src": "img/shy/3.jpg",
      "alt": "shy dad hat, Khaki"
     },
     {
-     "src": "img/shy/4.jpg",
+     "src": "img/shy/2.jpg",
      "alt": "shy dad hat, Navy"
+    },
+    {
+     "src": "img/shy/3.jpg",
+     "alt": "shy dad hat, Charcoal Grey"
+    },
+    {
+     "src": "img/shy/4.jpg",
+     "alt": "shy dad hat, Khaki"
     },
     {
      "src": "img/shy/5.jpg",
-     "alt": "shy dad hat, Navy"
+     "alt": "shy dad hat, Khaki"
     },
     {
      "src": "img/shy/6.jpg",
-     "alt": "shy dad hat, Navy"
+     "alt": "shy dad hat, Khaki"
     }
    ],
    "variants": [
@@ -387,27 +387,27 @@
    "images": [
     {
      "src": "img/its-cold/1.jpg",
-     "alt": "its head beanie, Black"
-    },
-    {
-     "src": "img/its-cold/2.jpg",
      "alt": "its head beanie, Dark green"
     },
     {
-     "src": "img/its-cold/3.jpg",
+     "src": "img/its-cold/2.jpg",
      "alt": "its head beanie, Black"
+    },
+    {
+     "src": "img/its-cold/3.jpg",
+     "alt": "its head beanie, Dark green"
     },
     {
      "src": "img/its-cold/4.jpg",
-     "alt": "its head beanie, Black"
+     "alt": "its head beanie, Dark green"
     },
     {
      "src": "img/its-cold/5.jpg",
-     "alt": "its head beanie, Black"
+     "alt": "its head beanie, Dark green"
     },
     {
      "src": "img/its-cold/6.jpg",
-     "alt": "its head beanie, Black"
+     "alt": "its head beanie, Dark green"
     }
    ],
    "variants": [
